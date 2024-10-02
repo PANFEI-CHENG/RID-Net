@@ -1,0 +1,31 @@
+misc:
+  exp_dir: demo
+
+model:
+  pretrain: 'weights.pth'
+  transformer_architecture: ['self', 'cross', 'self', 'cross', 'self', 'cross']
+  sigma_d: 0.2
+  sigma_a: 15
+  angle_k: 3
+
+data:
+  dataset: tdmatch
+  root: data
+
+coarse_matching:
+  matching_radius: 0.05
+  num_gt_coarse_corr: 128
+  num_est_coarse_corr: 256
+  coarse_overlap_threshold: 0.1
+
+fine_matching:
+  point_per_patch: 64
+  fine_matching_topk: 3
+  fine_matching_mutual: True
+  fine_matching_confidence_threshold: 0.06
+  fine_matching_use_dustbin: False
+  fine_matching_use_global_score: True
+  fine_matching_correspondence_threshold: 3
+
+
+
